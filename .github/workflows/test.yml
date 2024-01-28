@@ -16,7 +16,7 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: commits
         env:
-          COMMITS: ${{ contains('#skip', join(github.event.commits.*.message, '.')) }}
+          COMMITS: ${{ contains(join(github.event.commits.*.message, ''), '#skip') }}
         run: echo "$COMMITS"
       - name: commit messages
         env:
