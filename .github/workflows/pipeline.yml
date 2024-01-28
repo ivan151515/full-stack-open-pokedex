@@ -23,6 +23,6 @@ jobs:
         run: npm run build
       - name: test
         run: npm run test
-        if: ${{ github.event_name == 'push' }}
       - name: deploy
         run: curl ${{ secrets.RENDER_DEPLOY_HOOK }}
+        if: ${{ github.event_name == 'push' }}
